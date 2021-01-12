@@ -1,32 +1,29 @@
 # How to build a Distroless image for Quarkus ?
 
-This is an hello-world app to showcase the Distroless image
-
-## Running the application in dev mode
+This is a hello-world app to showcase a Quarkus native app in a Distroless container
 
 
-Step 1 : build the app in native mode 
+**Step 1** : build the app in native mode 
 ```shell script
 ./mvnw package -Pnative -Dquarkus.native.container-runtime=docker  
 ```
 
-## Dockerize the app using the provided Dockerfile
+**Step 2** : Dockerize the app using the provided Dockerfile
 
 The application can be packaged using:
 ```shell script
 docker build -f src/main/docker/Dockerfile.distroless -t maxday/quarkus-native-distroless .
 ```
 
-## Run it !
+**Step 3** : run it ! 
 ```shell script
 quarkus-native-distroless % docker run -it -p 8080:8080 maxday/quarkus-native-distroless:latest
 ```
 
 The application is now runnable using `java -jar target/quarkus-native-distroless-1.0.0-runner.jar`.
 
-## Size
+**Image size**
 
-You can create a native executable using: 
 ```shell script
 docker images | grep maxday/quarkus-native-distroless                                                               
 ```
