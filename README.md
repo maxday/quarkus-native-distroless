@@ -3,7 +3,7 @@
 This is a hello-world app to showcase a Quarkus native app in a Distroless container
 
 
-**Step 1** : build the app in native mode 
+**Step 1** : Build the app in native mode 
 ```shell script
 ./mvnw package -Pnative -Dquarkus.native.container-runtime=docker  
 ```
@@ -15,12 +15,10 @@ The application can be packaged using:
 docker build -f src/main/docker/Dockerfile.distroless -t maxday/quarkus-native-distroless .
 ```
 
-**Step 3** : run it ! 
+**Step 3** : Run it ! 
 ```shell script
 quarkus-native-distroless % docker run -it -p 8080:8080 maxday/quarkus-native-distroless:latest
 ```
-
-The application is now runnable using `java -jar target/quarkus-native-distroless-1.0.0-runner.jar`.
 
 **Image size**
 
