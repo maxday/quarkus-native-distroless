@@ -17,7 +17,7 @@ docker build -f src/main/docker/Dockerfile.distroless -t maxday/quarkus-native-d
 
 **Step 3** : Run it ! 
 ```shell script
-quarkus-native-distroless % docker run -it -p 8080:8080 maxday/quarkus-native-distroless:latest
+docker run -it -p 8080:8080 maxday/quarkus-native-distroless:latest
 ```
 
 **Image size**
